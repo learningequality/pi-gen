@@ -14,7 +14,7 @@
 
 After following the above steps the Raspberry Pi will provide a wifi network named under the essid `kolibri` without any password.
 
-After connecting a device to this wifi network provided by the Raspberry, you can open the url http://10.10.10.10 in a browser will allow you enjoy all the features of a working Kolibri server. 
+After connecting a device to this wifi network provided by the Raspberry, you can open the url http://10.10.10.10 in a browser will allow you enjoy all the features of a working Kolibri server.
 
 By default the server does not have Internet access, so an usb disk must be used to add content channels to Kolibri.
 
@@ -40,6 +40,6 @@ Using the `raspi-config` script we'll
 
 - Add options to make the wifi encrypted
 
-  
+
 
 ## Rebuilding the Kolibri Raspberry Pi image
