@@ -1,5 +1,5 @@
 FROM i386/debian:buster
-
+LABEL build=pigen
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update && \
