@@ -41,6 +41,3 @@ Using the `raspi-config` script we'll
 
 - Add options to make the wifi encrypted
 
-
-
-## Rebuilding the Kolibri Raspberry Pi image
