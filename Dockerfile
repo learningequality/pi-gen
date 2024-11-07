@@ -1,7 +1,6 @@
 FROM multiarch/qemu-user-static as qemu
 
-ARG BASE_IMAGE=debian:bullseye
-FROM ${BASE_IMAGE}
+FROM i386/debian:bullseye
 ENV DEBIAN_FRONTEND noninteractive
 
 
