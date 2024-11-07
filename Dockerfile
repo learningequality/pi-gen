@@ -1,11 +1,5 @@
-FROM multiarch/qemu-user-static as qemu
-
 FROM i386/debian:bullseye
 ENV DEBIAN_FRONTEND noninteractive
-
-
-# Copy qemu-arm-static into the image
-COPY --from=qemu /usr/bin/qemu-arm-static /usr/bin/
 
 RUN apt-get -y update && \
     apt-get -y install --no-install-recommends \
