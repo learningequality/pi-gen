@@ -18,7 +18,10 @@ ALIGN="$((4 * 1024 * 1024))"
 # some overhead (since actual space usage is usually rounded up to the
 # filesystem block size) and gives some free space on the resulting
 # image.
-ROOT_MARGIN="$(echo "($ROOT_SIZE * 0.2 + 200 * 1024 * 1024) / 1" | bc)"
+
+# To avoid disk space problems in the loop device, changed ROOT_MARGIN
+# as suggested in https://github.com/RPi-Distro/pi-gen/issues/784
+ROOT_MARGIN="$(echo "($ROOT_SIZE * 0.3 + 200 * 1024 * 1024) / 1" | bc)"
 
 BOOT_PART_START=$((ALIGN))
 BOOT_PART_SIZE=$(((BOOT_SIZE + ALIGN - 1) / ALIGN * ALIGN))
