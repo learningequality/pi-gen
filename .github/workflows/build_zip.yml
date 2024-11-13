@@ -65,7 +65,7 @@ jobs:
       with:
         platforms: arm
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
     - name: Build the pi image
       run: ./build-docker.sh
     - name: Rename the pi image and zip file
