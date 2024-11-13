@@ -23,14 +23,16 @@ get-deb: clean-deb
 	fi
 
 rename-zip:
+# Get current date in YYYY-MM-DD format
+	$(eval DATE := $(shell date +%Y-%m-%d))
 # Unzip the file so we can rename the image file
-	unzip -o deploy/image_Kolibri-lite.zip -d deploy
+	unzip -o deploy/image_$(DATE)-Kolibri-lite.zip -d deploy
 # Clean up the original zip file
-	rm deploy/image_Kolibri-lite.zip
+	rm deploy/image_$(DATE)-Kolibri-lite.zip
 # Get the version based on the debian file name kolibri_<version>-0ubuntu1_all.deb
 	$(eval VERSION=$(shell ls ${DIST_DIR} | grep kolibri | sed 's/kolibri_\(.*\)-0ubuntu1_all.deb/\1/'))
 # Rename the image file to include the version
-	mv deploy/Kolibri-lite.img deploy/kolibri-pi-image-$(VERSION).img
+	mv deploy/$(DATE)-Kolibri-lite.img deploy/kolibri-pi-image-$(VERSION).img
 # Zip the image file back up
 	zip -j deploy/kolibri-pi-image-$(VERSION).zip deploy/kolibri-pi-image-$(VERSION).img
 # Clean up the extracted image file
