@@ -45,7 +45,7 @@ jobs:
         repository: learningequality/pi-gen
         ref: ${{ inputs.ref }}
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@v3
     - name: Download the debfile from URL and install
       if: ${{ inputs.deb-url }}
       run: |
@@ -61,7 +61,7 @@ jobs:
         name: ${{ inputs.deb-file-name }}
         path: dist
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@v3
       with:
         platforms: arm
     - name: Set up Docker Buildx
